@@ -5,6 +5,7 @@ from plone.app.portlets.portlets import base
 
 
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+from collective.categories.backend import get_backend
 
 #from collective.portlet.categories import CategoriesPortletMessageFactory as _
 
@@ -47,6 +48,10 @@ class Renderer(base.Renderer):
     """
 
     render = ViewPageTemplateFile('categoriesportlet.pt')
+
+    def categories(self):
+        backend = get_backend(self.context)
+        return backend.get_categories()
 
 
 class AddForm(base.NullAddForm):
