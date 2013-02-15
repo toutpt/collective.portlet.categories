@@ -1,0 +1,22 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="collective.portlet.categories">
+
+  <browser:resourceDirectory
+    name="collective.portlet.categories"
+    directory="resources"
+    />
+
+  <include file="upgrades.zcml"/>
+
+  <genericsetup:registerProfile
+      name="default"
+      title="collective.portlet.categories"
+      directory="profiles/default"
+      description='Extension profile for collective.portlet.categories.'
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+</configure>
